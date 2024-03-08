@@ -40,3 +40,7 @@ Variables genreated
 ## Generated Code
 
 Generated files are named "*_generated.tf", which is already excluded from git.
+
+## Secrets
+
+Secrets can be stored in `secrets.yaml`. Its content is added to the inputs hash
