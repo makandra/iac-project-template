@@ -3,7 +3,7 @@ skip = true
 
 locals {
   # search the global config file in parent folders or use the one on the same level than this file
-  global_inputs = yamldecode(file(find_in_parent_folders("root_inputs.yaml", "root_inputs.yaml")))
+  root_inputs = yamldecode(file(find_in_parent_folders("root_inputs.yaml", "root_inputs.yaml")))
   secrets = yamldecode(file(find_in_parent_folders("secrets.yaml")))
 
   # Search the file 'environment_inputs.yaml' in parent folders and add it's content to the inputs.
@@ -21,7 +21,7 @@ inputs = merge(
   {
     module = basename(get_terragrunt_dir())
   },
-  local.global_inputs,
+  local.root_inputs,
   local.environment_inputs
 )
 
