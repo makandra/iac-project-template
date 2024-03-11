@@ -2,7 +2,7 @@ generate "global_variables" {
   path      = "global_variables_generated.tf"
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
-variable "component" {
+variable "module" {
   type = string
 }
 

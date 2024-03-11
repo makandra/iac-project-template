@@ -19,8 +19,7 @@ locals {
 # Merge all gathered data into the inputs Hash
 inputs = merge(
   {
-    # use the module folders name for the component
-    component = basename(get_terragrunt_dir())
+    module = basename(get_terragrunt_dir())
   },
   local.global_inputs,
   local.environment_inputs

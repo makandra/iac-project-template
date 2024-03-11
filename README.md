@@ -34,7 +34,7 @@ include "generic_variables" {
 Variables genreated
 - `environment`
 - `project`
-- `component`
+- `module`
 - `region`
 
 ## Generated Code
