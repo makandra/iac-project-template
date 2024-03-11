@@ -1,7 +1,3 @@
-generate "global_variables" {
-  path      = "global_variables_generated.tf"
-  if_exists = "overwrite_terragrunt"
-  contents  = <<EOF
 variable "module" {
   type = string
 }
@@ -16,7 +12,4 @@ variable "project" {
 
 variable "region" {
   type = string
-}
-EOF
-
 }

@@ -41,3 +41,25 @@ terraform {
   }
 }
 
+generate "root_variables" {
+  path      = "root_variables_generated.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = file("${get_repo_root()}/code_snippets/root_variables.tf")
+}
+
+generate "versions" {
+  path      = "versions_generated.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = templatefile(
+    "${get_repo_root()}/code_snippets/versions.tftpl",
+    {
+      aws_provider_version_constraint = local.root_inputs.aws_provider_version
+    }
+  )
+}
+
+generate "provider" {
+  path      = "provider_generated.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = file("${get_repo_root()}/code_snippets/provider_aws.tf")
+}
