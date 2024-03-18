@@ -4,7 +4,6 @@ skip = true
 locals {
   # Search the global config file in parent folders or use the one on the same level as this file
   root_inputs = yamldecode(file(find_in_parent_folders("root_inputs.yaml", "root_inputs.yaml")))
-  secrets = yamldecode(file(find_in_parent_folders("secrets.yaml")))
 
   # Search the file 'environment_inputs.yaml' in parent folders and add it's content to the inputs.
   # The search is done from the perspective of the calling module.

@@ -40,3 +40,9 @@ The templates for generated code live in `code_snippets` either included with `f
 ## Secrets
 
 Secrets can be stored in `secrets.yaml`. Its content is added to the inputs hash.
+
+Add the following code to the `locals` block of `root.hcl` to use this feature.
+
+```hcl
+secrets = yamldecode(file(find_in_parent_folders("secrets.yaml")))
+```
