@@ -1,8 +1,8 @@
-# do not threat this folder as module
+# Do not threat this folder as module
 skip = true
 
 locals {
-  # search the global config file in parent folders or use the one on the same level than this file
+  # Search the global config file in parent folders or use the one on the same level as this file
   root_inputs = yamldecode(file(find_in_parent_folders("root_inputs.yaml", "root_inputs.yaml")))
   secrets = yamldecode(file(find_in_parent_folders("secrets.yaml")))
 
