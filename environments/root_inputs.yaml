@@ -1,4 +1,4 @@
 ---
 project: MY_NEW_PROJECT
-region_default: eu-central-1
+region: eu-central-1
 aws_provider_version: "~> 5.10"
