@@ -41,6 +41,21 @@ The templates for generated code live in `code_snippets` and can be included wit
 
 The environment variable `TF_PLUGIN_CACHE_DIR` is set to `~/.cache/terraform/plugin-cache` by default and can be overwritten by setting the variable otherwise. The cache directory is created if not existent. This suppresses a warning raised by terraform.
 
+## Use OpenTofu
+
+When using OpenTofu add the following to the `terraform` section.
+
+```hcl
+terraform {
+   extra_arguments "OpenTofu binary" {
+     commands = ["*"]
+     env_vars = {
+       TERRAGRUNT_TFPATH = "tofu"
+     }
+   }
+}
+```
+
 ## Secrets
 
 Secrets can be stored in `secrets.yaml`. Its content is added to the inputs hash.
