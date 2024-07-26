@@ -5,7 +5,8 @@ provider "aws" {
     tags = {
       Environment = var.environment
       Project     = var.project
-      module      = var.module
+      Module      = var.module
+      ManagedBy   = var.team
     }
   }
 }

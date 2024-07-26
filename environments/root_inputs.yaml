@@ -2,3 +2,4 @@
 project: MY_NEW_PROJECT
 region: eu-central-1
 aws_provider_version: "~> 5.10"
+team: makandra-devops

@@ -13,3 +13,7 @@ variable "project" {
 variable "region" {
   type = string
 }
+
+variable "team" {
+  type = string
+}
