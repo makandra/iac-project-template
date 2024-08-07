@@ -45,12 +45,7 @@ generate "root_variables" {
 generate "versions" {
   path      = "versions_generated.tf"
   if_exists = "overwrite_terragrunt"
-  contents  = templatefile(
-    "${get_repo_root()}/code_snippets/versions.tftpl",
-    {
-      aws_provider_version_constraint = local.root_inputs.aws_provider_version
-    }
-  )
+  contents  = file("${get_repo_root()}/code_snippets/versions.tftpl")
 }
 
 generate "provider" {
