@@ -42,12 +42,6 @@ generate "root_variables" {
   contents  = file("${get_repo_root()}/code_snippets/root_variables.tf")
 }
 
-generate "versions" {
-  path      = "versions_generated.tf"
-  if_exists = "overwrite_terragrunt"
-  contents  = file("${get_repo_root()}/code_snippets/versions.tftpl")
-}
-
 generate "provider" {
   path      = "provider_generated.tf"
   if_exists = "overwrite_terragrunt"
