@@ -1,5 +1,6 @@
 terraform.tfstate*
 .terraform/
+.terragrunt-cache/
 *.zip
 .vscode/
 .idea/

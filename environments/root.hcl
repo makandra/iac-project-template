@@ -47,3 +47,20 @@ generate "provider" {
   if_exists = "overwrite_terragrunt"
   contents  = file("${get_repo_root()}/code_snippets/provider_aws.tf")
 }
+
+# GitLab state storage
+# remote_state {
+#   backend = "http"
+#   config = {
+#     address        = "${get_env("CI_API_V4_URL")}/projects/${get_env("CI_PROJECT_ID")}/terraform/state/${replace(get_path_from_repo_root(), "/", "-")}"
+#     lock_address   = "${get_env("CI_API_V4_URL")}/projects/${get_env("CI_PROJECT_ID")}/terraform/state/${replace(get_path_from_repo_root(), "/", "-")}/lock"
+#     unlock_address = "${get_env("CI_API_V4_URL")}/projects/${get_env("CI_PROJECT_ID")}/terraform/state/${replace(get_path_from_repo_root(), "/", "-")}/lock"
+#     lock_method    = "POST",
+#     unlock_method  = "DELETE",
+#     retry_wait_min = "5"
+#   }
+#   generate = {
+#     path      = "backend_generated.tf"
+#     if_exists = "overwrite_terragrunt"
+#   }
+# }
