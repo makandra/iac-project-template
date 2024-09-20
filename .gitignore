@@ -4,5 +4,6 @@ terraform.tfstate*
 .vscode/
 .idea/
 *generated.tf
+*generated_override.tf
 .envrc
 *secrets.yaml
