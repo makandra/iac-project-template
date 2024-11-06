@@ -8,11 +8,15 @@ This is a template containing a basic skeleton for infrastructure as code projec
 
 Root modules that are holding state are stored in one of the environments. The environments `global`, `staging` and `production` are a good starting point.
 
-## Create own Modules
+## Create your own Modules
 
-See `environment/global/state-storage` for an example of an module.
+See `environment/global/state-storage` for an example of a module.
 
 ## Hierarchical loading of data
+
+The basic logic for data loading is defined in the `root.hcl` in the `environments` folder. This file gets included in every subsequent `terragrunt.hcl`. When running `terragrunt run-all plan` in the `environments` folder every `terragrunt.hcl` gets identified by Terragrunt as root module and a plan is created for every root module. This also explains why the top-level Terragrunt file must be named `root.hcl` instead of `terragrunt.hcl`. With this naming scheme Terragrunt doesn't identify `root.hcl` as a root module and won't create a plan for it, which would lead to an error.
+
+The `terragrunt.hcl` itself includes the `root.hcl` and all other relevant files. These two files combined lead to the following hierarchical loading logic:
 
 - module loads `inputs.yaml`
 - environment loads `environment_inputs.yaml`
