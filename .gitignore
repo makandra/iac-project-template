@@ -8,3 +8,4 @@ terraform.tfstate*
 *generated_override.tf
 .envrc
 *secrets.yaml
+mise.local.toml
