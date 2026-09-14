@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -n "${CI}" ]] ; then
+    echo "not retrieving key in CI"
+    exit 0
+fi
+
+ssh-add -L
